@@ -20,6 +20,15 @@ variable "deno_aaaa" {
 # Main
 #-------------------------------------------
 
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
+  }
+}
+
 data "cloudflare_zone" "domain" {
   name = var.zone_name
 }
